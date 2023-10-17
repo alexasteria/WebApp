@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useGetProducts } from "./use_get_products";
 import { useGetCategories } from "../CateroryListPage/use_get_categories";
-import { CartItem } from "../../App";
-import RenderCards from "./RenderCards";
+import { CartItem } from "src/App";
+import Index from "src/components/ProductListPage/RenderCards";
 
 const ProductListPage: React.FC<{
   cart: CartItem[];
@@ -20,13 +20,13 @@ const ProductListPage: React.FC<{
   const { products } = useGetProducts(subcategoriesID);
   return (
     <>
-      <RenderCards
+      <Index
         products={products.filter((p) => p.available === "Y")}
         cart={cart}
         onDecrementItem={onDecrementItem}
         onIncrementItem={onIncrementItem}
       />
-      <RenderCards
+      <Index
         products={products.filter((p) => p.available === "N")}
         cart={cart}
         onDecrementItem={onDecrementItem}

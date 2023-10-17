@@ -13,6 +13,8 @@ export type CartItem = {
 };
 
 const App: React.FC = () => {
+  let tg = window.Telegram.WebApp;
+  tg.expand();
   const [cart, setCart] = useState<CartItem[]>([]);
   const onIncrementItem = useCallback(
     (item: CartItem, maxCount?: number) => {

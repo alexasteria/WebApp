@@ -53,7 +53,9 @@ const CategoryListPage = () => {
             >
               {c.name}
             </div>
-            <div style={{ width: "85%" }}>{c.description}</div>
+            <div style={{ width: "85%" }}>
+              {c.description.replace("&nbsp;", " ")}
+            </div>
           </div>
         ))}
       <div>Есть вопросы?</div>

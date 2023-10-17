@@ -1,7 +1,7 @@
 import React from "react";
-import { Product } from "../types";
-import ProductCard from "./ProductCard";
-import { CartItem } from "../../App";
+import { Product } from "src/components/types";
+import Index from "src/components/ProductListPage/ProductCard";
+import { CartItem } from "src/App";
 
 const RenderCards: React.FC<{
   products: Product[];
@@ -14,7 +14,7 @@ const RenderCards: React.FC<{
       {products.map((p) => {
         if (p.elements.length === 1) {
           return (
-            <ProductCard
+            <Index
               key={p.elements[0].id}
               product={p}
               element={p.elements[0]}
@@ -30,7 +30,7 @@ const RenderCards: React.FC<{
         return p.elements.map((element) => {
           if (element.item?.available === "N") return null;
           return (
-            <ProductCard
+            <Index
               key={element.id}
               product={p}
               element={element}

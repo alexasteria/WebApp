@@ -1,6 +1,6 @@
 import React from "react";
-import { Product, ProductElement } from "../types";
-import { CartItem } from "../../App";
+import { Product, ProductElement } from "src/components/types";
+import { CartItem } from "src/App";
 
 const ProductCard: React.FC<{
   product: Product;
